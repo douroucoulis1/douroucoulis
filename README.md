@@ -4,13 +4,13 @@ douroucoulis is a library that synergizes Information-Theory model selection, th
 
 WELCOME!
 
-mod_selection() is a small library meant to aide in  model selection, using an Information-Theoretic framework, and building predictive models using the latest machine learning algorithms, all in the same place.
+mod_selection() is Python class with a small library of methods meant to aide in  model selection, using an Information-Theoretic framework (& other feature-reducing approaches), to build predictive models using the latest machine learning algorithms, all in the same place.
 
 The most important aspect about using this library, and about AIC-based model selection, is building a solid a priori model set based on the your knowledge and expertise on the study system/species. Read and think deeply on the subject, then think some more and seek inspiration in order to produce relevant competing hypotheses!
 
-The overall pipeline used throughout is: data cleaning, data exporation, model/feature selection, cross-validation, model hyperparametrization, and making predictions. Always look for grouping variables and fit mixed models (eg. LMM, GLMM) to produce more accurate estimates for your explanatory parameters of interest, especially. if your goal is to explain rather than predict.
+The overall pipeline used throughout is: data cleaning, data exporation, model/feature selection/reduction, cross-validation, model hyperparametrization, and making predictions. Always look for grouping variables and fit mixed models (eg. LMM, GLMM) to produce more accurate estimates for your explanatory parameters of interest, especially. if your goal is to explain rather than predict.
 
-The main functions and their arguments are:
+The main methods and their arguments are:
 
 - instructions() -> produces step-by-step instructions. Dinos are cool, don't lie.
 
@@ -18,11 +18,11 @@ The main functions and their arguments are:
 
 - check_data(data) -> takes one argument, which is the dataframe object where the data is stored. Cxhecks for any missing values in the dataset.
 
-- caremico.impute_data(strategy) -> imputes missing data using the SimpleImputer() for categorical try 'most_frequent',if you only have numerical values try mean, median, etc.
+- impute_data(strategy) -> imputes missing data using the SimpleImputer() for categorical try 'most_frequent',if you only have numerical values try mean, median, etc.
 
-- caremico.explore(data, cmap) -> returns a heatmap of the different explanatory variables (features) with your outcome variable (target). It takes two arguments: the dataframe where the data are stored and the color map (try 'rainbow', 'seismic', 'hsv' or 'plasma').
+- explore(data, cmap) -> returns a heatmap of the different explanatory variables (features) with your outcome variable (target). It takes two arguments: the dataframe where the data are stored and the color map (try 'rainbow', 'seismic', 'hsv' or 'plasma').
 
-- caremico.aictable(model_set, model_names) -> returns a dataframe showing each model ranked from best to worst. The function takes 2 arguments: a list containing each model (e.g., model_set = [sex, age]) and a list containing the names of each model in model_set (e.g., model_names = ['sex', 'age']).
+- aictable(model_set, model_names) -> returns a dataframe showing each model ranked from best to worst. The function takes 2 arguments: a list containing each model (e.g., model_set = [sex, age]) and a list containing the names of each model in model_set (e.g., model_names = ['sex', 'age']).
 
 - best_fit() -> returns the name and corresponding statistics for a single best-fit model (i.e., AIC weight > 0.90). If no single model is identified, use best_ranked() for multi-model inference.
 

@@ -1,6 +1,6 @@
 # douroucoulis
 
-douroucoulis is a library that synergizes Information-Theory model selection, the latest Machine Learning algorithms, and numerous Data Science tools in Python.
+Description: douroucoulis is a library that synergizes Information-Theory model selection, the latest Machine Learning algorithms, and numerous Data Science tools in Python.
 
 WELCOME!
 
